@@ -5,15 +5,19 @@
  */
 package conexionntb;
 
+import static conexionntb.ConexionNTB.con;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 /**
  *
  * @author Usuario
  */
 public class PanelRelacional extends javax.swing.JDialog {
 
-    /**
-     * Creates new form PanelRelacional
-     */
+    
     public PanelRelacional(javax.swing.JDialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -71,9 +75,14 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridLayout(10, 1));
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setText("IdProv");
         jPanel1.add(jLabel1);
@@ -86,7 +95,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel1);
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel4.setText(" ");
         jPanel2.add(jLabel4);
@@ -99,7 +108,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel2);
 
-        jPanel3.setLayout(new java.awt.GridLayout());
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel7.setText(" ");
         jPanel3.add(jLabel7);
@@ -112,7 +121,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel3);
 
-        jPanel4.setLayout(new java.awt.GridLayout());
+        jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel10.setText(" ");
         jPanel4.add(jLabel10);
@@ -125,7 +134,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel4);
 
-        jPanel5.setLayout(new java.awt.GridLayout());
+        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel13.setText(" ");
         jPanel5.add(jLabel13);
@@ -138,7 +147,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel5);
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel16.setText(" ");
         jPanel6.add(jLabel16);
@@ -151,7 +160,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel6);
 
-        jPanel7.setLayout(new java.awt.GridLayout());
+        jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel19.setText(" ");
         jPanel7.add(jLabel19);
@@ -164,7 +173,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel7);
 
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel22.setText(" ");
         jPanel8.add(jLabel22);
@@ -177,7 +186,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel8);
 
-        jPanel9.setLayout(new java.awt.GridLayout());
+        jPanel9.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel25.setText(" ");
         jPanel9.add(jLabel25);
@@ -190,7 +199,7 @@ public class PanelRelacional extends javax.swing.JDialog {
 
         getContentPane().add(jPanel9);
 
-        jPanel10.setLayout(new java.awt.GridLayout());
+        jPanel10.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel28.setText(" ");
         jPanel10.add(jLabel28);
@@ -206,9 +215,43 @@ public class PanelRelacional extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        rellenar();
+    }//GEN-LAST:event_formComponentShown
+
     /**
      * @param args the command line arguments
      */
+   /* ArrayList<ArrayList<String>> mostrardatos2(String idProdString){
+        
+        String sql = "SELECT * FROM proveedores WHERE Idprod = "+idProdString;
+        Statement st;
+        ArrayList<ArrayList<String>> datos2 = new ArrayList();
+        
+       for (ArrayList<String> dato : datos2) {
+           datos2.add(new ArrayList());
+       }
+       try {
+           st = con.createStatement();
+           ResultSet result = st.executeQuery(sql);
+           int i=0;
+           while (result.next()){
+               datos2.add(new ArrayList());
+               datos2.get(i).add(result.getString(1));
+               datos2.get(i).add(result.getString(2));
+               datos2.get(i).add(result.getString(3));
+               i++;  
+           }
+           System.out.println("testpanelrelacional2222");
+       } catch (SQLException ex) {
+           System.out.println("ex");
+           
+           
+           
+       }
+       System.out.println(datos2.get(0).get(1));
+      return datos2;
+    }*/
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -244,8 +287,96 @@ public class PanelRelacional extends javax.swing.JDialog {
                     }
                 });
                 dialog.setVisible(true);
+                
+               
+                
+               
+            
+            
+            
             }
+           
         });
+    }
+    void rellenar(){
+        ArrayList<ArrayList<String>> relacionados = new ArrayList();
+                
+                try{
+                    jLabel4.setText(relacionados.get(0).get(0));
+                    
+                    jLabel5.setText(relacionados.get(0).get(1));
+                    jLabel6.setText(relacionados.get(0).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel7.setText(relacionados.get(1).get(0));
+                    jLabel8.setText(relacionados.get(1).get(1));
+                    jLabel9.setText(relacionados.get(1).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel10.setText(relacionados.get(2).get(0));
+                    jLabel11.setText(relacionados.get(2).get(1));
+                    jLabel12.setText(relacionados.get(2).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel13.setText(relacionados.get(3).get(0));
+                    jLabel14.setText(relacionados.get(3).get(1));
+                    jLabel15.setText(relacionados.get(3).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel16.setText(relacionados.get(4).get(0));
+                    jLabel17.setText(relacionados.get(4).get(1));
+                    jLabel18.setText(relacionados.get(4).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel19.setText(relacionados.get(5).get(0));
+                    jLabel20.setText(relacionados.get(5).get(1));
+                    jLabel21.setText(relacionados.get(5).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel22.setText(relacionados.get(6).get(0));
+                    jLabel23.setText(relacionados.get(6).get(1));
+                    jLabel24.setText(relacionados.get(6).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel25.setText(relacionados.get(7).get(0));
+                    jLabel26.setText(relacionados.get(7).get(1));
+                    jLabel27.setText(relacionados.get(7).get(2));
+                }catch (Exception ex) {
+                    
+                }
+                
+                try{
+                    jLabel28.setText(relacionados.get(8).get(0));
+                    jLabel29.setText(relacionados.get(8).get(1));
+                    jLabel30.setText(relacionados.get(8).get(2));
+                }catch (Exception ex) {
+                    
+                }
+               
+                
+               
+                
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -290,4 +421,5 @@ public class PanelRelacional extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
+
 }

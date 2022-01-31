@@ -17,8 +17,8 @@ import javax.swing.JDialog;
  * @author Wiku
  */
 public class PanelMostrar extends javax.swing.JPanel {
-String claveforanea;
-Color defaultColor = new Color(187,187,187);
+static String claveforanea;
+Color defaultColor = new Color(214,217,223);
     /**
      * Creates new form PanelMostrar
      */
@@ -113,6 +113,7 @@ Color defaultColor = new Color(187,187,187);
                 .addComponent(jButton1))
         );
 
+        jPanel2.setBackground(new java.awt.Color(187, 187, 187));
         jPanel2.setToolTipText("");
         jPanel2.setLayout(new java.awt.GridLayout(10, 1));
 
@@ -465,6 +466,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         claveforanea=jLabel9.getText();
                 System.out.println(claveforanea);
+                 PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel5MouseClicked
 
@@ -482,6 +484,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
        claveforanea=jLabel13.getText();
                System.out.println(claveforanea);
+                PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel6MouseClicked
 
@@ -501,6 +504,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         claveforanea=jLabel17.getText();
                 System.out.println(claveforanea);
+                 PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel7MouseClicked
 
@@ -519,6 +523,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         claveforanea=jLabel21.getText();
                 System.out.println(claveforanea);
+                 PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel8MouseClicked
 
@@ -538,6 +543,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
        claveforanea=jLabel25.getText();
                System.out.println(claveforanea);
+                PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel9MouseClicked
 
@@ -556,6 +562,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MouseClicked
         claveforanea=jLabel29.getText();
                 System.out.println(claveforanea);
+                 PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel10MouseClicked
 
@@ -575,7 +582,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseClicked
         claveforanea=jLabel33.getText();
                 System.out.println(claveforanea);
-
+                PanelBD.relacionados(claveforanea);
     }//GEN-LAST:event_jPanel11MouseClicked
 
     private void jPanel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseEntered
@@ -593,6 +600,7 @@ Color defaultColor = new Color(187,187,187);
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseClicked
         claveforanea=jLabel37.getText();
                 System.out.println(claveforanea);
+                 PanelBD.relacionados(claveforanea);
 
     }//GEN-LAST:event_jPanel12MouseClicked
 

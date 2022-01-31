@@ -17,10 +17,12 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
+
 public class PanelBD extends javax.swing.JDialog {
     GridBagLayout dinamico = new GridBagLayout();
     PanelInsertar panelInsertar;
     PanelMostrar panelMostrar;
+    ArrayList<ArrayList<String>> datosstatic = new ArrayList();    
     public PanelBD(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -54,9 +56,10 @@ public class PanelBD extends javax.swing.JDialog {
         String sql= "SELECT * FROM proveedores WHERE Idprod="+claveforanea;
         Statement st;
         ArrayList<ArrayList<String>> datos2 = new ArrayList();
-        for (ArrayList<String> dato : datos2) {
+    {for (ArrayList<String> dato : datos2) {
            datos2.add(new ArrayList());
        }
+    }
         try {
             st=ConexionNTB.con.createStatement();
             ResultSet result = st.executeQuery(sql);
@@ -82,8 +85,8 @@ public class PanelBD extends javax.swing.JDialog {
         dialog = new PanelRelacional(new javax.swing.JDialog(), true);
          System.out.println("testpanel");
         dialog.setVisible(true);
-         return datos2;
-        
+         
+        return datos2;
     }
     
     @SuppressWarnings("unchecked")
