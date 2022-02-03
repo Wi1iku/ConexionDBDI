@@ -82,7 +82,7 @@ public class PanelBD extends javax.swing.JDialog {
         
          PanelRelacional dialog;
          //dialog = new PanelRelacional(new javax.swing.JDialog() , rootPaneCheckingEnabled);
-        dialog = new PanelRelacional(new javax.swing.JDialog(), true);
+        dialog = new PanelRelacional(new javax.swing.JDialog(), true,datos2);
          System.out.println("testpanel");
         dialog.setVisible(true);
          

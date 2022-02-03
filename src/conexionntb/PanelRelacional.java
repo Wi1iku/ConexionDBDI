@@ -17,9 +17,11 @@ import java.util.ArrayList;
  */
 public class PanelRelacional extends javax.swing.JDialog {
 
+    static ArrayList<ArrayList<String>> datos;
     
-    public PanelRelacional(javax.swing.JDialog parent, boolean modal) {
+    public PanelRelacional(javax.swing.JDialog parent, boolean modal,ArrayList<ArrayList<String>> datos) {
         super(parent, modal);
+        this.datos=datos;
         initComponents();
     }
 
@@ -279,7 +281,7 @@ public class PanelRelacional extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PanelRelacional dialog = new PanelRelacional(new javax.swing.JDialog(), true);
+                PanelRelacional dialog = new PanelRelacional(new javax.swing.JDialog(), true,datos);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -299,7 +301,7 @@ public class PanelRelacional extends javax.swing.JDialog {
         });
     }
     void rellenar(){
-        ArrayList<ArrayList<String>> relacionados = new ArrayList();
+        ArrayList<ArrayList<String>> relacionados =datos;
                 
                 try{
                     jLabel4.setText(relacionados.get(0).get(0));
